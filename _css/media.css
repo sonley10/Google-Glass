@@ -1,0 +1,77 @@
+@charset "UTF-9";
+
+div#tv-radio {
+    width: 900;
+    height: 580px;
+    margin: auto;
+    background: url("../_imagens/radio-tv.png") no-repeat;
+}
+
+/* tudo isso só para formata a posição e o butao do audio */
+audio#musica {
+    display: block;
+    position: relative;
+    left: 572px;
+    top: 494px;
+    width: 300px;
+    height: 40px;
+    background-color: rgba(245, 235, 220, 0.85);
+    border: 2px solid #8b5e3c;
+    border-radius: 0px;
+}
+
+/* Painel de controle (Chrome/Safari) */
+audio#musica::-webkit-media-controls-panel {
+    background-color: rgba(245, 235, 220, 0.85);
+    border-radius: 0px;
+    font-family: 'Courier New', monospace;
+    color: #5c3d23;
+}
+
+/* Estilo inicial do botão play/pause */
+audio#musica::-webkit-media-controls-play-button {
+    cursor: pointer;
+    display: block;
+    background-color: transparent; /* Remove o fundo quadrado */
+    position: relative;
+    border: none; /* Remove bordas */
+    border-radius: 50%; /* Faz o botão ser circular */
+    transition: transform 0.3s ease;
+    -webkit-transition: background-color 1s;
+    -moz-transition: background-color 1s;
+    -o-transition: background-color 1s;
+    -ms-transition: background-color 1s;
+    transition: background-color 1s; /* Suaviza as mudanças */
+}
+
+/* Efeito de hover: mudar a cor de fundo e aumentar o tamanho do botão, mantendo a forma circular */
+audio#musica::-webkit-media-controls-play-button:hover {
+    background-color: #606060; /* Cor mais escura quando o mouse passa */
+    transform: scale(1.1); /* Aumenta o tamanho do botão */
+    opacity: 1;
+}
+
+/* Transformar o botão em um triângulo de play */
+audio#musica::-webkit-media-controls-play-button:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid; /* Triângulo branco */
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: opacity 0.3s ease; /* Suaviza a transição */
+}
+
+/* fim */
+
+video#filme {
+    display: block;
+    position: relative;
+    left: 87px;
+    top: 85px;
+    width: 440px;
+}
