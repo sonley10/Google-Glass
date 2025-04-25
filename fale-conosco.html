@@ -33,38 +33,85 @@
 
     </header>
 
-Fale Conosco > Contato
-Formulário de Contato
-por Sonley Foriste
-Atualizado em 28/abril/2025
-
-Identificação do Usuário
-    Nome:
-    Senha:
-    E-mail:
-    Sexo:
-        - Masculino
-        - Feminino
-    Data de Nascimento:
-
-Endereço do Usuário
-    Logradouro:
-    Número:
-    Estado:
-    Cidade:
-
-Mensagem do Usuário
-    Grau de Urgência:
-    Mensagem:
-
-Quero um Google Glass
-    Gostaria de adquirir um Google Glass quando disponível
-    Cor:
-    Quantidade:
-    Preço Total: R$
+    <section id="corpo-full">
+        <article id="noticia-principal">
+            <header id="cabecalho-artigo">
+                <hgroup>
+                    <h1> Galeria de Imagens do Google Glass</h1>
+                    <h2>por Sonley Foriste</h2>
+                    <h3 class="direita">Atualizado em 28/abril/2025</h3>
+                </hgroup>
+            </header>
 
 
-[BOTÃO ENVIAR]
+<form>
+    <fieldset id="usuario">
+        <legend>Identificação do Usuário</legend>
+        <!-- o maxlength faz que voce limita qnts caracter que vai aparece e pode limit-lo -->
+          <!-- o placeholder da dica do que voce quer que a aperce na barra de escrever  max -->
+            <p><label for="Nome">Nome:</label> <input type="text" name="Nome" id="Nome" size="20" maxlength="30" placeholder="Nome Completo"/></p>
+            <p><label for="Senha">Senha:</label> <input type="password" name="Senha" id="Senha" size="8" maxlength="20" placeholder="Senha"/> </p>
+            <p><label for="E-mail">E-mail:</label> <input type="email" name="E-mail" id="E-mail" size="20" maxlength="50" placeholder="E-mail"/></p>
+            <fieldset id="sexo"><legend>Sexo:</legend>
+                <!--O label serve para identificar-->
+                <input type="radio" name="Sexo" id="Masc" checked/><label for="Masc">Masculino</label></br><!--</br> serve para quebre de linha-->
+                <input type="radio" name="Sexo" id="Fem"/><label for="Fem">Feminino</label>
+            </fieldset>
+            <p>Data de Nascimento: <input type="date" name="Nascc"/> </p>
+    </fieldset>
+    
+    <fieldset id="endereco">
+        <legend>Endereço do Usuário</legend>
+            <p><label for="Rua">Logradouro:</label> <input type="text" name="Rua" id="Rua" size="13" maxlength="80" placeholder="Rua, Av, Travessa ..."/></p>
+            <p><label for="Num">Número:</label> <input type="number" name="Num" id="Num" min="0" max="99999"/></p>
+               
+            <p>
+                <label for="estado">Estado:</label>
+                <select name="estado" id="estado" onchange="atualizarCidades()">
+                  <option value="">Selecione</option>
+                </select>
+              </p>
+              
+              <p>
+                <label for="cidade">Cidade:</label>
+                <select name="cidade" id="cidade">
+                  <option value="">Selecione a cidade</option>
+                </select>
+              </p>
+              
+              <script src="_javascript/funcoes.js"></script>
+              <script>
+                window.onload = function() {
+                  carregarEstados();
+                };
+              </script>
+              
+              
+                  
+              
+    </fieldset>
+    
+    <fieldset id="mensagem">
+        <legend>Mensagem do Usuário</legend>
+            <p>Grau de Urgência:</p>
+            <p>Mensagem:</p>
+    </fieldset>
+    
+    <fieldset id="pedido">
+        <legend>Quero um Google Glass</legend>
+            <p>
+                Gostaria de adquirir um Google Glass quando disponível
+                Cor:
+            </p>
+            <p>Quantidade:</p>
+            <p>Preço Total: R$</p> 
+    </fieldset>
+    
+    [BOTÃO ENVIAR]
+</form>
+
+</article> 
+</section>
 
     <footer id="rodape">
         <p>Copyright &copy; 2025 - by Sonley Foriste <br/>

@@ -19,8 +19,10 @@ div#interface {
     padding: 10px;
 }
 
+/*para centralizar*/
 div#sonley {
     margin: 2px auto 0px 272px;
+    
 }
 
 p{
@@ -39,11 +41,42 @@ a:hover {
     transition: 1s;
 }
 
+/* Posição padrão para telas grandes */
 header#cabecalho img#icone {
     position: absolute;
-    left: 780px;
+    left: 1040px;  /* Ajuste a posição para telas maiores */
     top: 70px;
 }
+
+/* Ajuste para telas menores */
+@media (max-width: 1024px) {
+    header#cabecalho img#icone {
+        left: 700px;  /* Ajuste para uma tela média (exemplo para tablet) */
+    }
+}
+
+/* Ajuste para telas médias (como tablets) */
+@media (max-width: 1024px) {
+    header#cabecalho img#icone {
+        left: 800px;  /* Mover um pouco mais para a direita em telas médias */
+    }
+}
+
+/* Ajuste para telas muito pequenas, como em celulares */
+@media (max-width: 768px) {
+    header#cabecalho img#icone {
+        left: 750px;  /* Ajuste para uma tela pequena (exemplo para celular) */
+    }
+}
+
+/* Ajuste para telas menores ainda */
+@media (max-width: 480px) {
+    header#cabecalho img#icone {
+        left: 300px;  /* Ajuste mais para telas bem pequenas */
+        top: 50px;  /* Você pode ajustar a posição vertical também */
+    }
+}
+
 
 header#cabecalho {
 border-bottom: 1px #606060 solid;
@@ -109,13 +142,24 @@ nav#menu ul {
     text-transform: uppercase;
     position: absolute;
     top: -20px;
-    left: 300px;
+    left: 305px;
+    margin-left: 43px;
 }
+
+/* Quando a tela for pequena (ex: celulares) */
+@media (max-width: 768px) {
+    nav#menu ul {
+        position: absolute;
+        top: -20px;   /* Aumentei de -20px para -30px (sobe mais) */
+        left: 250px;  /* Aumentei de 300px para 350px (mais à direita) */
+    }
+}
+
 
 nav#menu li {
     display: inline-block;
     background-color: #dddddd;
-    padding: 10px;
+    padding: 6px;
     margin: 2px;
     -webkit-transition: background-color 1s;
     -moz-transition: background-color 1s;
@@ -252,3 +296,4 @@ footer#rodape {
 footer#rodape p {
     text-align: center;
 }
+
