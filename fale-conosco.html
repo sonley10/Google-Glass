@@ -1,90 +1,114 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>DeliTech - Sua Lanchonete</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tagesschrift&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <title>Tudo sobre Google Glass</title>
+    <link rel="stylesheet" href="_css/estilo.css"/>
+    <link rel="stylesheet" href="_css/form.css"/>
 </head>
+<script language="JavaScript" src="_javascript/funcoes.js"></script>
 <body>
+<div id="interface">
 
-<div class="overlay" id="overlay"></div>
+    <header id="cabecalho">
+        <hgroup>
+            <h1>Google Glass</h1>
+            <h2>A revolução do Google está chegando</h2>
+        </hgroup>
 
-<div class="container">
+        <img id="icone" src="_imagens/contato.png">
 
-  <header class="topo">
-  <div class="menu-icon" onclick="abrirMenu()">☰</div>
+        <nav id="menu">
+            <h1>Menu Principal</h1>
+            <ul type="disc">
+                <div id="sonley">
+                    <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html"> Home</a></li>
+                    <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+                    <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+                    <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+                    <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+                </div>
+            </ul>
+        </nav>
 
-    <div class="logo">DeliTech</div>
+    </header>
 
-    <div class="botoes-usuario">
-      <a href="cadastro.php" class="btn-Criar">Criar conta</a>
-      <a href="login.php" class="btn-entrar">Entrar</a>
-    </div>
-  </header>
+    <section id="corpo-full">
+        <article id="noticia-principal">
+            <header id="cabecalho-artigo">
+                <hgroup>
+                    <h2>por Sonley Foriste</h2>
+                    <h3 class="direita">Atualizado em 28/abril/2025</h3>
+                </hgroup>
+            </header>
 
-  <section class="hero">
-    <h2>Peça seus lanches no DeliTech</h2>
-    <p>Entregamos tudo que você precisa na sua casa, do lanche ao refrigerante 🍔🥤</p></br>
-    <div class="search-area">
-  <div class="search-box">
-    <span class="search-icon">🔍</span>
-    <input type="text" placeholder="Em qual endereço você está?">
-  </div>
-  <a href="#" class="btn-ver">Ver os melhores lanches</a>
-</div>
+<form>
+    <fieldset id="usuario">
+        <legend>Identificação do Usuário</legend>
+        <!-- o maxlength faz que voce limita qnts caracter que vai aparece e pode limit-lo -->
+          <!-- o placeholder da dica do que voce quer que a aperce na barra de escrever  max -->
+            <p><label for="Nome">Nome:</label> <input type="text" name="Nome" id="Nome" size="20" maxlength="30" placeholder="Nome Completo"/></p>
+            <p><label for="Senha">Senha:</label> <input type="password" name="Senha" id="Senha" size="8" maxlength="20" placeholder="Senha"/> </p>
+            <p><label for="E-mail">E-mail:</label> <input type="email" name="E-mail" id="E-mail" size="20" maxlength="50" placeholder="E-mail"/></p>
+            <fieldset id="sexo"><legend>Sexo:</legend>
+                <!--O label serve para identificar-->
+                <input type="radio" name="Sexo" id="Masc" checked/><label for="Masc">Masculino</label></br><!--</br> serve para quebre de linha-->
+                <input type="radio" name="Sexo" id="Fem"/><label for="Fem">Feminino</label>
+            </fieldset>
+            <p>Data de Nascimento: <input type="date" name="Nascc"/> </p>
+    </fieldset>
+    
+    <fieldset id="endereco">
+        <legend>Endereço do Usuário</legend>
+            <p><label for="Rua">Logradouro:</label> <input type="text" name="Rua" id="Rua" size="13" maxlength="80" placeholder="Rua, Av, Travessa ..."/></p>
+            <p><label for="Num">Número:</label> <input type="number" name="Num" id="Num" min="0" max="99999" placeholder="13"/></p>
+               
+            <p>
+                <label for="estado">Estado:</label>
+                <select name="estado" id="estado" onchange="atualizarCidades()">
+                  <option value="">Selecione</option>
+                </select>
+              </p>
+              
+              <p>
+                <label for="cidade">Cidade:</label>
+                <select name="cidade" id="cidade">
+                  <option value="">Selecione a cidade</option>
+                </select>
+              </p>
+              
+              <script src="_javascript/cidade.js"></script>
+              
+            
+    </fieldset>
+    
+    <fieldset id="mensagem">
+        <legend>Mensagem do Usuário</legend>
+            <p>Grau de Urgência:</p>
+            <p>Mensagem:</p>
+    </fieldset>
+    
+    <fieldset id="pedido">
+        <legend>Quero um Google Glass</legend>
+            <p>
+                Gostaria de adquirir um Google Glass quando disponível
+                Cor:
+            </p>
+            <p>Quantidade:</p>
+            <p>Preço Total: R$</p> 
+    </fieldset>
+    
+    [BOTÃO ENVIAR]
+</form>
 
-    <div class="categorias">
-      <button>Hambúrguer</button>
-      <button>Sobremesas</button>
-      <button>Pizzas</button>
-      <button>Salgados</button>
-      <button>Combos</button>
-      <button>Cerveja</button>
-      <button>Pizzas</button>
-      <button>Sobremesas</button>
-      <button>Refrigerantes</button>
-      <button>Refrigerantes</button>
-    </div>
-  </section>
-</br> </br> </br> </br> </br> </br>
+</article> 
+</section>
 
-<!-- Menu Lateral (Drawer) -->
-<div class="menu-lateral" id="menuLateral">
-
-<!-- Menu lateral tipo drawer -->
-<div class="menu-drawer" id="menuDrawer">
-  <div class="fechar-menu" onclick="fecharMenu()">✕</div>
-
-  <div class="logo-menu">DeliTech</div></br>
-
-
-  <div class="menu-links">
-    <a href="#">Entregador</a></br>
-    <a href="#">Restaurante e Mercado</a></br>
-    <a href="#">Carreiras</a></br>
-    <a href="#">iFood Card</a></br>
-    <a href="#">Para Empresas</a>
-  </div>
-<div class="menu-botoes">
-  <a href="login.php" class="btn-menu-entrar">Entrar</a>
-  <a href="cadastro.php" class="btn-menu-criar">criar conta</a>
-</div>
-</div>
-</div>
-
-<script src="assets/js/index.js"></script>
-
-  <footer id="rodape">
-    <p>&copy; <?php echo date('Y'); ?> DeliTech - by Sonley Foriste. Todos os direitos reservados.</p>
-    <a href="http://facebook.com/sonley01" target="_blank">Facebook</a>
-    <a href="http://instagram.com/__sssonleyyy" target="_blank">Instagram</a>
-  </footer>
-
+    <footer id="rodape">
+        <p>Copyright &copy; 2025 - by Sonley Foriste <br/>
+            <a href="http://facebook.com/sonley01" target="_blank"> Facebook </a> |
+            <a href="http://instagram.com/__sssonleyyy" target="_blank">Instagram </a> </p>
+    </footer>
 </div>
 </body>
 </html>
