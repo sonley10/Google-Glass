@@ -5,8 +5,16 @@
     <title>Tudo sobre Google Glass</title>
     <link rel="stylesheet" href="_css/estilo.css"/>
     <link rel="stylesheet" href="_css/form.css"/>
-</head>
 <script language="JavaScript" src="_javascript/funcoes.js"></script>
+<script>
+    function calc_total() {
+        var qtd = parseInt(document.getElementById('Qtd').value);
+        total = qtd * 1500;
+        document.getElementById('Total').value = total;
+    }
+</script>
+</head>
+
 <body>
 <div id="interface">
 
@@ -37,12 +45,22 @@
         <article id="noticia-principal">
             <header id="cabecalho-artigo">
                 <hgroup>
+<<<<<<< HEAD
+=======
+                    <h1> Fale-Conosco</h1>
+>>>>>>> ced8b28 (Atualizando site com novos arquivos)
                     <h2>por Sonley Foriste</h2>
-                    <h3 class="direita">Atualizado em 28/abril/2025</h3>
+                    <h3 class="direita">Atualizado em 30/Setembro/2025</h3>
                 </hgroup>
             </header>
 
+<<<<<<< HEAD
 <form>
+=======
+<!--para recebe todos email dos usuariao-->
+<form method="post" id="Contato" action="mailto:contato@sonleyforiste127@gmail.com" oninput="calc_total();">
+
+>>>>>>> ced8b28 (Atualizando site com novos arquivos)
     <fieldset id="usuario">
         <legend>Identificação do Usuário</legend>
         <!-- o maxlength faz que voce limita qnts caracter que vai aparece e pode limit-lo -->
@@ -55,7 +73,7 @@
                 <input type="radio" name="Sexo" id="Masc" checked/><label for="Masc">Masculino</label></br><!--</br> serve para quebre de linha-->
                 <input type="radio" name="Sexo" id="Fem"/><label for="Fem">Feminino</label>
             </fieldset>
-            <p>Data de Nascimento: <input type="date" name="Nascc"/> </p>
+            <p>Data de Nascimento: <input type="date" name="Nasc"/> </p>
     </fieldset>
     
     <fieldset id="endereco">
@@ -78,27 +96,29 @@
               </p>
               
               <script src="_javascript/cidade.js"></script>
-              
-            
     </fieldset>
-    
+
     <fieldset id="mensagem">
         <legend>Mensagem do Usuário</legend>
-            <p>Grau de Urgência:</p>
-            <p>Mensagem:</p>
+            <p><label for="Urgência"> Grau de Urgência:</label>
+            Min<input type="range" name="Urgência" id="Urgência" min="0" max="10" step="2">Máx </p>
+            <p><label for="Mensagem">Mensagem:</label>
+            <textarea name="Mensagem" id="Mensagem" cols="35" rows="5" placeholder="Deixe aqui sua mensagem"></textarea> </p>
     </fieldset>
     
     <fieldset id="pedido">
         <legend>Quero um Google Glass</legend>
-            <p>
-                Gostaria de adquirir um Google Glass quando disponível
-                Cor:
-            </p>
-            <p>Quantidade:</p>
-            <p>Preço Total: R$</p> 
+            <p> <input type="checkbox" name="Pedido" id="Pedido" checked/>
+            <label for="Pedido">Gostaria de adquirir um Google Glass quando disponível</label></p>
+            <p><label for="Cor"> Cor:</label>
+            <input type="color" name="Cor" id="Cor" value="#000ff"/> </p>
+            <p><label for="Qtd"> Quantidade:</label>
+            <input type="number" name="Qtd" id="Qtd" min="0" max="5" value="0"/> </p>
+            <p><label for="Preço"> Preço Total: R$</label>
+            <input type="text" name="Total" id="Total" placeholder="Total a pagar" readonly/> </p> 
     </fieldset>
-    
-    [BOTÃO ENVIAR]
+
+    <input type="image" name="Enviar" src="_imagens/botao-enviar.png"/>
 </form>
 
 </article> 
